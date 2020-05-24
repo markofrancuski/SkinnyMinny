@@ -31,11 +31,13 @@ public class SceneSwitcher : MonoBehaviour
     public void LoadMainMenu()
     {
         SceneManager.LoadScene(1);
+        //AudioManager.Instance.PlayMusic(0);
     }
 
     public void LoadOptions()
     {
         SceneManager.LoadScene(3);
+        AudioManager.Instance.PlayMusic(1);
     }
 
     private bool _alreadyWaiting;

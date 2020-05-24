@@ -18,8 +18,12 @@ public class GameManager : MonoBehaviour
     #endregion
 
     #region Components Declaration
+    [Header("Components Declaration")]
     [SerializeField]
     private TextMeshProUGUI _scoreText;
+    [SerializeField]
+    private GameObject _gameOverObject;
+    [Space]
     #endregion
 
     #region Variables Declaration
@@ -44,12 +48,24 @@ public class GameManager : MonoBehaviour
         Instance = this;
         UpdateScore();
     }
+
+    private void OnEnable()
+    {
+        EndGameEvent += SetGameOverText;
+    }
+
+    private void OnDisable()
+    {
+        EndGameEvent -= SetGameOverText;
+    }
+
     #endregion
 
     #region Event Methods
 
     public void StartGame()
     {
+        AudioManager.Instance.PlayMusic(1);
         Debug.Log("STARTED");
         StartGameEvent?.Invoke();
         Timing.RunCoroutine(_StartTicking().CancelWith(gameObject), "TickingCoroutine");
@@ -80,6 +96,11 @@ public class GameManager : MonoBehaviour
     private void UpdateScore()
     {
         _scoreText.SetText(_score.ToString());
+    }
+
+    private void SetGameOverText()
+    {
+        _gameOverObject.SetActive(true);
     }
 
     #endregion

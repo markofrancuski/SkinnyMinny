@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class ChangeSceneButton : MonoBehaviour
-{
+{ 
     public string SceneName;
     private Button _button;
 
@@ -23,5 +23,7 @@ public class ChangeSceneButton : MonoBehaviour
     {
         SceneSwitcher.Instance.LoadLevel(SceneName);
     }
+
+
 
 }

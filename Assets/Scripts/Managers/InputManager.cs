@@ -97,14 +97,13 @@ public class InputManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.DownArrow)) AddMovement(Direction.DOWN);
     }
 
-
     private void AddMovement(Direction movement)
     {
         //Debug.Log($"Input received: {movement}");
         InputReceived?.Invoke(movement);
     }
 
-    private void Control() { Debug.Log("ASD!!!"); _isControllable = true; }
+    private void Control() =>_isControllable = true;
     private void UnControl() => _isControllable = false;
 
 }

@@ -37,7 +37,7 @@ public class ScenePickerEditor : EditorWindow
         if (GUILayout.Button("Option Scene"))
         {
             //Load Splash Scene
-            //EditorSceneManager.OpenScene("Assets/Scenes/Main Menu Scene.unity");
+            EditorSceneManager.OpenScene("Assets/Scenes/OptionScene.unity");
         }
         if (GUILayout.Button("Skins Scene"))
         {
