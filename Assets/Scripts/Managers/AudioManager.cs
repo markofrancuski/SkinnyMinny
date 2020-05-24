@@ -22,7 +22,7 @@ public class AudioManager : Singleton<AudioManager>
     private AudioClip[] _musicClips;
 
     public float SoundFXVolume;
-    private bool _isStarted;
+    //private bool _isStarted;
 
     public void DoOnStart()
     {
@@ -33,8 +33,8 @@ public class AudioManager : Singleton<AudioManager>
         float musicValue = 1;
         if (PlayerPrefs.HasKey("Music")) musicValue = PlayerPrefs.GetFloat("Music");
         _musicSource.volume = musicValue;
-        if (!_isStarted) { PlayMusic(0); _isStarted = true; }
-
+        //if (!_isStarted) { PlayMusic(0); _isStarted = true; }
+        PlayMusic(0);
 
         _soundFXSource.playOnAwake = false;
         _soundFXSource.loop = false;

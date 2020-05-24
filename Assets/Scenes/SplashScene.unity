@@ -511,7 +511,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _fillImage: {fileID: 1833339031}
-  Timer: 5
+  Timer: 2.5
   _isLoadingDone: 0
 --- !u!1 &794894569
 GameObject:
